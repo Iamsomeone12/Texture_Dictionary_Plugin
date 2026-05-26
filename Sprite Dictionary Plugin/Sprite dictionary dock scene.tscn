@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bxcn6jgj0kubk"]
+
+[ext_resource type="Script" uid="uid://cm1fnuap4y2mx" path="res://addons/Sprite Dictionary Plugin/SpriteDictDock.gd" id="1_y5m1s"]
+
+[node name="SpriteDictionaryDockScene" type="Control" unique_id=485929261]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y5m1s")
+
+[node name="Panel" type="Panel" parent="." unique_id=38349985]
+layout_mode = 0
+offset_right = 330.0
+offset_bottom = 432.0
+
+[node name="Sprite path" type="LineEdit" parent="Panel" unique_id=1455688240]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.103
+anchor_bottom = 1.103
+offset_left = 1.0
+offset_top = 15.503967
+offset_right = 124.0
+offset_bottom = 46.503967
+placeholder_text = "Sprite file path"
+expand_to_text_length = true
+
+[node name="Sprite name" type="LineEdit" parent="Panel" unique_id=1753589799]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0350001
+anchor_right = 0.003
+anchor_bottom = 1.0350001
+offset_left = 1.0
+offset_top = -0.120025635
+offset_right = 103.01
+offset_bottom = 30.879974
+grow_vertical = 0
+placeholder_text = "Sprite name"
+max_length = 13
+expand_to_text_length = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel" unique_id=1138748560]
+custom_minimum_size = Vector2(282, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel/ScrollContainer" unique_id=435801298]
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 80
+theme_override_constants/v_separation = 50
+
+[connection signal="text_submitted" from="Panel/Sprite path" to="." method="_on_sprite_path_text_submitted"]
+[connection signal="text_changed" from="Panel/Sprite name" to="." method="_on_sprite_name_text_changed"]
+[connection signal="text_submitted" from="Panel/Sprite name" to="." method="_on_sprite_name_text_submitted"]
